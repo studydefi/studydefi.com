@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `StudyDeFi`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Adrian Li`,
+      summary: `bringing defi to the masses`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A blog to demonstrate how to start building with money legos.`,
+    siteUrl: `https://studydefi.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `studydefi`,
     },
   },
   plugins: [
