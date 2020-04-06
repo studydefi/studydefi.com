@@ -1,11 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: `StudyDeFi`,
-    author: {
-      name: `Adrian Li`,
-      summary: `bringing defi to the masses`,
-    },
-    description: `A blog to demonstrate how to start building with money legos.`,
+    founders: [
+      {
+        name: `Adrian Li`,
+        association: "Truffle",
+      },
+      {
+        name: `Kendrick Tan`,
+        association: "Omisego",
+      },
+    ],
+    description: `Created by Ethereum industry professionals to help bring DeFi to the masses.`,
     siteUrl: `https://studydefi.com/`,
     social: {
       twitter: `studydefi`,
