@@ -62,3 +62,31 @@ Yes, we have a [cat](https://www.instagram.com/mr.miso.oz/)
 ## What is the smart wallet for?
 
 The Smart Wallet allows us to perform atomic transactions on your behalf. For example, taking out a loan and repaying your debt. This would normally be a manual process, but we since we are using flash loans, it needs to all be in one single transaction. It also saves you time!
+
+## Swapping Debt
+
+<div style="width: 100%;">
+<iframe
+  src="https://giant.gfycat.com/LivelyFancyIrishterrier.webm"
+  title="Swapping Debt with Dedge"
+  frameBorder="0"
+  webkitallowfullscreen="true"
+  mozallowfullscreen="true"
+  allowFullScreen
+  style="width: inherit; height: 420px"
+></iframe>
+</div>
+
+## Swapping Collateral
+
+<div style="width: 100%;">
+<iframe
+  src="https://giant.gfycat.com/IdenticalWeeklyCaracal.webm"
+  title="Swapping Debt with Dedge"
+  frameBorder="0"
+  webkitallowfullscreen="true"
+  mozallowfullscreen="true"
+  allowFullScreen
+  style="width: inherit; height: 420px"
+></iframe>
+</div>
