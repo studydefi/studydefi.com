@@ -131,5 +131,12 @@ module.exports = {
         delayLoadTime: 1000,
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://studydefi.us19.list-manage.com/subscribe/post?u=cda36633fa310b8474871e5ac&amp;id=3e93676690",
+      },
+    },
   ],
 }

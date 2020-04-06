@@ -18,4 +18,4 @@ We will walk through many of the "gotchas" and the edge cases we've come across 
 
 # How do I subscribe?
 
-Follow this link to sign up to our mailing list: `<insert link here>`.
+Sign up at the bottom of this page!
