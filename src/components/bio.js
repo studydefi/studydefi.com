@@ -11,22 +11,22 @@ import { useStaticQuery, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          founders {
-            name
-          }
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query BioQuery {
+  //     site {
+  //       siteMetadata {
+  //         founders {
+  //           name
+  //         }
+  //         social {
+  //           twitter
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  const { founders } = data.site.siteMetadata
+  // const { founders } = data.site.siteMetadata
   return (
     <div
       style={{
