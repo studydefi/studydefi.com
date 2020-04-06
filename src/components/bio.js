@@ -34,9 +34,6 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <p>
-        Created by Ethereum industry professionals to help bring DeFi to the masses.
-      </p>
     </div>
   )
 }
