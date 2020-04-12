@@ -1,0 +1,22 @@
+body {
+  --bg: white;
+  --textNormal: #444;
+  --textTitle: #444;
+  --textLink: #2196f3;
+  --hr: hsla(0, 0%, 0%, 0.2);
+  --textHomeBlogLink: #666;
+
+  background-color: var(--bg);
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #1c232a;
+  --textNormal: #adb7bd;
+  --textTitle: white;
+  --textLink: #fe921f;
+  --hr: hsla(0, 0%, 100%, 0.2);
+  --textHomeBlogLink: #fe921f;
+}

@@ -56,12 +56,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -138,5 +132,6 @@ module.exports = {
           "https://studydefi.us19.list-manage.com/subscribe/post?u=cda36633fa310b8474871e5ac&amp;id=3e93676690",
       },
     },
+    `gatsby-plugin-dark-mode`
   ],
 }
