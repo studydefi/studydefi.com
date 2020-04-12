@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+import "../global.css"
+
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -24,11 +26,13 @@ const BlogIndex = ({ data, location }) => {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none`, color: "var(--textHomeBlogLink)" }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small style={{ color: "var(--textTitle)" }}>
+                {node.frontmatter.date}
+              </small>
             </header>
             <section>
               <p

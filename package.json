@@ -10,6 +10,7 @@
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-dark-mode": "^1.1.1",
     "gatsby-plugin-feed": "^2.3.26",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.39",

@@ -2,6 +2,15 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import DarkModeSwitch from "../components/dark-mode-switch"
+
+const logoFontStyles = {
+  fontFamily: `IBM Plex Sans, sans-serif`,
+  fontWeight: `300`,
+  textTransform: `uppercase`,
+  color: `#fe921f`,
+  letterSpacing: `4px`
+}
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -9,11 +18,12 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
+      <h3
         style={{
-          ...scale(1.5),
+          // ...scale(1.5),
           marginBottom: rhythm(1.5),
           marginTop: 0,
+          ...logoFontStyles,
         }}
       >
         <Link
@@ -26,14 +36,14 @@ const Layout = ({ location, title, children }) => {
         >
           {title}
         </Link>
-      </h1>
+      </h3>
     )
   } else {
     header = (
       <h3
         style={{
-          fontFamily: `IBM Plex Sans, sans-serif`,
           marginTop: 0,
+          ...logoFontStyles,
         }}
       >
         <Link
@@ -54,17 +64,16 @@ const Layout = ({ location, title, children }) => {
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(28),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <div style={{ position: `relative` }}>
+        <header>{header}</header>
+        <DarkModeSwitch />
+      </div>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <footer><p>©{new Date().getFullYear()}</p></footer>
     </div>
   )
 }
