@@ -14,6 +14,8 @@ const typography = new Typography({
   ],
   headerFontFamily: ["IBM Plex Sans", "sans-serif"],
   bodyFontFamily: ["Roboto", "serif"],
+  headerColor: "var(--textTitle)",
+  bodyColor: "var(--textNormal)",
   blockMarginBottom: "2rem",
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     a: {
@@ -23,12 +25,8 @@ const typography = new Typography({
     "a:hover": {
       textDecoration: `underline`,
     },
-    "p": {
-      color: `var(--textNormal)`,
-    },
     "h1, h2, h3, h4, h5, h6": {
       fontFamily: `IBM Plex Sans, Sans Serif`,
-      color: `var(--textTitle)`,
       marginTop: rhythm(2.5)
     },
     hr: {
