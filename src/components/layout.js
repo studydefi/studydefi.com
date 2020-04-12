@@ -73,7 +73,9 @@ const Layout = ({ location, title, children }) => {
         <DarkModeSwitch />
       </div>
       <main>{children}</main>
-      <footer><p>©{new Date().getFullYear()}</p></footer>
+      <footer>
+        <p>©{new Date().getFullYear()}</p>
+      </footer>
     </div>
   )
 }

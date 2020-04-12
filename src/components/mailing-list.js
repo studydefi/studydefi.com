@@ -22,24 +22,36 @@ const MailingList = () => {
     >
       <div
         style={{
-          border: `1px solid var(--highlight)`,
           width: `100%`,
-          padding: rhythm(2),
-          borderRadius: rhythm(1),
+          maxWidth: `420px`,
+          padding: rhythm(1),
         }}
       >
         <div>
           <p>Subscribe to level up your DeFi game!</p>
         </div>
-        <div style={{ display: `flex` }}>
+        <div style={{ display: `flex`, flexDirection: `column` }}>
           <input
-            style={{ marginRight: `6px`, flexGrow: `1` }}
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="first.name@gmail.com"
+            style={{
+              borderBottomLeftRadius: `0`,
+              borderBottomRightRadius: `0`,
+            }}
           />
-          <button onClick={handleSubmit}>Sign Up</button>
+          <button
+            style={{
+              background: `var(--highlight)`,
+              color: `white`,
+              borderTopLeftRadius: `0`,
+              borderTopRightRadius: `0`,
+            }}
+            onClick={handleSubmit}
+          >
+            Sign Up
+          </button>
         </div>
         {response !== null && (
           <div>
