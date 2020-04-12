@@ -23,17 +23,17 @@ const typography = new Typography({
     "a:hover": {
       textDecoration: `underline`,
     },
-    "p": {
+    p: {
       color: `var(--textNormal)`,
     },
     "h1, h2, h3, h4, h5, h6": {
       fontFamily: `IBM Plex Sans, Sans Serif`,
       color: `var(--textTitle)`,
-      marginTop: rhythm(2.5)
+      marginTop: rhythm(2.5),
     },
     hr: {
-      background: `var(--hr)`
-    }
+      background: `var(--hr)`,
+    },
   }),
 })
 
