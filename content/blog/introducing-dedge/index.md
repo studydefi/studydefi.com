@@ -65,28 +65,8 @@ The Smart Wallet allows us to perform atomic transactions on your behalf. For ex
 
 ## Swapping Debt
 
-<div style="width: 100%;">
-<iframe
-  src="https://giant.gfycat.com/LivelyFancyIrishterrier.webm"
-  title="Swapping Debt with Dedge"
-  frameBorder="0"
-  webkitallowfullscreen="true"
-  mozallowfullscreen="true"
-  allowFullScreen
-  style="width: inherit; height: 420px"
-></iframe>
-</div>
+<div style='position:relative; padding-bottom:calc(73.60% + 44px)'><iframe src='https://gfycat.com/ifr/LivelyFancyIrishterrier' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 
 ## Swapping Collateral
 
-<div style="width: 100%;">
-<iframe
-  src="https://giant.gfycat.com/IdenticalWeeklyCaracal.webm"
-  title="Swapping Debt with Dedge"
-  frameBorder="0"
-  webkitallowfullscreen="true"
-  mozallowfullscreen="true"
-  allowFullScreen
-  style="width: inherit; height: 420px"
-></iframe>
-</div>
+<div style='position:relative; padding-bottom:calc(73.60% + 44px)'><iframe src='https://gfycat.com/ifr/IdenticalWeeklyCaracal' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
