@@ -25,13 +25,10 @@ const typography = new Typography({
     "a:hover": {
       textDecoration: `underline`,
     },
-    "h1, h2, h3, h4, h5, h6": {
-      fontFamily: `IBM Plex Sans, Sans Serif`,
-      marginTop: rhythm(2.5)
-    },
-    hr: {
-      background: `var(--hr)`
-    }
+    "h1, h2": { marginTop: rhythm(2.5) },
+    "h3, h4": { marginTop: rhythm(2) },
+    "h5, h6": { marginTop: rhythm(1.75) },
+    hr: { background: `var(--hr)` },
   }),
 })
 
