@@ -9,7 +9,7 @@ const logoFontStyles = {
   fontWeight: `300`,
   textTransform: `uppercase`,
   color: `#fe921f`,
-  letterSpacing: `4px`
+  letterSpacing: `4px`,
 }
 
 const Layout = ({ location, title, children }) => {
@@ -69,7 +69,7 @@ const Layout = ({ location, title, children }) => {
       }}
     >
       <div style={{ position: `relative` }}>
-        <header>{header}</header>
+        <header style={{ marginTop: `var(--headspace)` }}>{header}</header>
         <DarkModeSwitch />
       </div>
       <main>{children}</main>

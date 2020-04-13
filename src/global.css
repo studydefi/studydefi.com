@@ -1,5 +1,12 @@
 html {
   --highlight: #fe921f;
+  --headspace: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    --headspace: 0;
+  }
 }
 
 body {
