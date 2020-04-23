@@ -1,6 +1,6 @@
 ---
 title: "NPM Install @studydefi/money-legos"
-date: "2020-04-11"
+date: "2020-04-23"
 description: "Struggling to source the correct ABIs and addresses when developing your DeFI DApp? Look no further!"
 ---
 
