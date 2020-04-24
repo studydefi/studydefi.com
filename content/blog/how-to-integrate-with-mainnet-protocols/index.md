@@ -6,7 +6,7 @@ description: "Wanna try build a dapp that interacts with multiple mainnet protoc
 
 While building out [Dedge](https://dedge.exchange), one of the first problems we encountered was:
 
-> How and where do we start integrating with mainnet DeFi protocols?
+> How do we even begin to start interacting with existing Mainnet dapps?
 
 Ideally, we would like to fork off the current mainnet state into a sandboxed environment, and develop/test our smart contracts from there. The emphasis on forking off the mainnet state it provides a couple key features:
 
