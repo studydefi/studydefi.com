@@ -11,7 +11,7 @@ While building out [Dedge](https://dedge.exchange), one of the first problems we
 Ideally, we would like to fork off the current Mainnet state into a sandboxed environment, and develop/test our smart contracts from there. The reason this is important is because it provides a few essential benefits:
 
 1. All existing DeFi protocols (e.g. Aave/Compound/etc.) have real and full liquidity.
-2. You're almost guaranteed every major procotol will be deployed on mainnet.
+2. You have guaranteed access to every major protocol deployed on Mainnet.
     - If you're interacting with multiple protocols, they might not all be available on the same testnet e.g. Rinkeby
 3. As you're forking off the mainnet state, all mainnet contract addresses will be the same in your private testnet.
 4. Increases your development velocity as you can just focus on developing your application, not writing scripts to deploy the protocols to your private testnet.
