@@ -83,4 +83,4 @@ Unfortunately the Infura key from Ethers.js does not point to an archival node. 
 
 > Returned error: project ID does not have access to archive state
 
-Stay tune for the next blogpost on how to avoid this issue (without paying \$250/month for an archival node)!
+Stay tuned for the next blogpost on how to avoid this issue (without paying \$250/month for an archival node)!
