@@ -8,7 +8,7 @@ While building out [Dedge](https://dedge.exchange), one of the first problems we
 
 > How do we even begin to start interacting with existing Mainnet dapps?
 
-Ideally, we would like to fork off the current mainnet state into a sandboxed environment, and develop/test our smart contracts from there. The emphasis on forking off the mainnet state it provides a couple key features:
+Ideally, we would like to fork off the current Mainnet state into a sandboxed environment, and develop/test our smart contracts from there. The reason this is important is because it provides a few essential benefits:
 
 1. Liquidity automatically configured on other DeFi procotols e.g. Aave/Compound/Compound.
 2. You're almost guaranteed every major procotol will be deployed on mainnet.
