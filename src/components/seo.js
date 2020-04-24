@@ -30,7 +30,7 @@ const SEO = ({ description, lang, meta, title, thumbnail }) => {
   const metaDescription = description || site.siteMetadata.description
   const imageSrc = thumbnail?.childImageSharp?.fluid?.src
 
-  let origin = ""
+  let origin = "https://studydefi.com"
   if (typeof window !== "undefined") {
     origin = window.location.origin
   }
