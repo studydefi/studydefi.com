@@ -63,9 +63,11 @@ const main = async () => {
 main();
 ```
 
+Note that the above code sample uses our `money-legos` library. We will take a deep dive into that [package](https://github.com/studydefi/money-legos) in a future blog post.
+
 # "Gotchas" to be aware of
 
-Unfortunately the infura key from Ethers.js does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you'll be greeted with the following message from Infura:
+Unfortunately the Infura key from Ethers.js does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you'll be greeted with the following message from Infura:
 
 > Returned error: project ID does not have access to archive state
 
