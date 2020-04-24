@@ -12,25 +12,25 @@ Ideally, we would like to fork off the current Mainnet state into a sandboxed en
 
 1. All existing DeFi protocols (e.g. Aave/Compound/etc.) have real and full liquidity.
 2. You have guaranteed access to every major protocol deployed on Mainnet.
-    - If you're interacting with multiple protocols, they might not all be available on the same testnet e.g. Rinkeby
-3. As you're forking off the mainnet state, all mainnet contract addresses will be the same in your private testnet.
-4. Increases your development velocity as you can just focus on developing your application, not writing scripts to deploy the protocols to your private testnet.
+    - If you were using official testnets (e.g. Rinkeby) and needed to interact with more than one protocol, not all of them might be deployed to the same network
+3. Since you're forking off of Mainnet state, all contract addresses will be the same in both development and production.
+4. Your development velocity is significantly increased because you don't have to worry about deploying existing protocols onto your test network.
 
 
-Fortunately, the amazing folks over at [truffle](https://www.trufflesuite.com/) has made a lovely tool called [ganache-cli](https://www.trufflesuite.com/ganache).
+Fortunately, the amazing folks over at [truffle](https://www.trufflesuite.com/) has made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/).
 
 # Quickstart
 
-To fork off mainnet, simply invoke the `-f` flag on `ganache-cli`.
+To fork off Mainnet, simply invoke the `-f` flag on `ganache-cli`.
 
 ```bash
 npx ganache-cli -f https://mainnet.infura.io/v3/7d0d81d0919f4f05b9ab6634be01ee73 -i 5777 -d
 ```
-_The infura api key is obtained from [ethers.js](https://github.com/ethers-io/ethers.js/blob/master/src.ts/providers/infura-provider.ts#L14)._
+_This Infura API key is obtained publicly from [Ethers.js](https://github.com/ethers-io/ethers.js/blob/master/src.ts/providers/infura-provider.ts#L14)._
 
-You should be able to interact with ganache (with mainnet state) on `http://localhost:8454`.
+You should be able to interact with Ganache (with Mainnet state) on `http://localhost:8545`.
 
-You can then try and interact with some mainnet contract, for example `wETH`:
+You can then try and interact with some Mainnet contracts, for example `WETH` or Wrapped Ether:
 
 ```javascript
 const { legos } = require("@studydefi/money-legos");
@@ -57,7 +57,7 @@ const main = async () => {
 
   const wethBal = await wethContract.balanceOf(wallet.address);
 
-  console.log(`wETH Bal: ${ethers.utils.formatEther(wethBal)}`);
+  console.log(`WETH Balance: ${ethers.utils.formatEther(wethBal)}`);
 };
 
 main();
@@ -65,7 +65,7 @@ main();
 
 # "Gotchas" to be aware of
 
-Unfortunately the infura key from `ether.js` does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you'll be greeted with the following message from infura:
+Unfortunately the infura key from Ethers.js does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you'll be greeted with the following message from Infura:
 
 > Returned error: project ID does not have access to archive state
 
