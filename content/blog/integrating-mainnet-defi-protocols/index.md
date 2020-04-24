@@ -2,6 +2,7 @@
 title: "Integrating Mainnet DeFi Protocols into your Ethereum Dapp"
 date: "2020-04-24"
 description: "Wanna try build a dapp that interacts with multiple mainnet protocols but don't know where to start? Read on!"
+thumbnail: './building-blocks.jpg'
 ---
 
 ![building blocks](./building-blocks.jpg)

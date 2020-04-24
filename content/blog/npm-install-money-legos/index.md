@@ -2,6 +2,7 @@
 title: "npm install money-legos"
 date: "2020-04-23"
 description: "All major DeFi protocol ABIs and addresses at your finger tips! With Typescript autocomplete!"
+thumbnail: './orange-legos.jpg'
 ---
 
 ![orange legos](./orange-legos.jpg)
