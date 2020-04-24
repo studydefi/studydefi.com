@@ -9,7 +9,7 @@ const typography = new Typography({
     },
     {
       name: `Roboto`,
-      styles: [`400`],
+      styles: [`400`, `700`, `900`],
     },
   ],
   headerFontFamily: ["IBM Plex Sans", "sans-serif"],

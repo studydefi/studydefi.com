@@ -39,7 +39,8 @@ input {
   box-shadow: none;
   border: 1px solid #fe921f;
   border-radius: 0.2rem;
-  transition: color 0.2s ease-out, background 0.2s ease-out, border 0.2s ease-out;
+  transition: color 0.2s ease-out, background 0.2s ease-out,
+    border 0.2s ease-out;
 }
 
 button {
@@ -52,7 +53,29 @@ button {
   transition: border 200ms;
 }
 
-input:focus, button:focus, a:focus {
+input:focus,
+button:focus,
+a:focus {
   box-shadow: 2px 2px 6px 1px #fe921fb3;
   outline: 0;
+}
+
+blockquote {
+  font-size: 24px;
+  font-style: italic;
+}
+
+strong {
+  font-weight: 900;
+}
+
+img {
+  display: block;
+  margin: auto;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 32px 32px 0px,
+    rgba(0, 0, 0, 0.15) 0px 16px 16px 0px, rgba(0, 0, 0, 0.15) 0px 8px 8px 0px,
+    rgba(0, 0, 0, 0.15) 0px 4px 4px 0px;
 }

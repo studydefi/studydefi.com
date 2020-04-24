@@ -132,6 +132,6 @@ module.exports = {
           "https://studydefi.us19.list-manage.com/subscribe/post?u=cda36633fa310b8474871e5ac&amp;id=3e93676690",
       },
     },
-    `gatsby-plugin-dark-mode`
+    `gatsby-plugin-dark-mode`,
   ],
 }
