@@ -2,6 +2,7 @@ import "../global.css"
 import Typography from "typography"
 
 const typography = new Typography({
+  baseFontSize: `18px`,
   googleFonts: [
     {
       name: `IBM Plex Sans`,
