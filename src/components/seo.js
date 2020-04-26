@@ -62,7 +62,11 @@ const SEO = ({ description, lang, meta, title, thumbnail }) => {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:site`,
+          content: `@studydefi`,
         },
         {
           name: `twitter:creator`,
