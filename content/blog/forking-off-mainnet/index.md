@@ -1,7 +1,7 @@
 ---
 title: "Forking off Mainnet — Developing in the Real World"
 date: "2020-04-24"
-description: "A guide on building and testing with existing Mainnet protocols"
+description: "Working with existing protocols can be hard, but it doesn't have to be."
 thumbnail: "./building-blocks.jpg"
 ---
 
@@ -59,7 +59,13 @@ Basically, we want to just **work on Mainnet itself**. And the way to do that is
 
 ## Advantages
 
-Forking off Mainnet provides a few essential benefits.
+Forking off Mainnet provides three key essential benefits:
+
+1. Real and full liquidity
+2. Everything on the same network
+3. Development and production parity
+
+Let's discuss each of these in-depth.
 
 ### 1. Real and full liquidty
 
@@ -69,7 +75,7 @@ Don't forget that each ERC20 token in the wild can have its own nuances (like di
 
 This also applies to lending protocols like AAVE and Compound. Lending and borrowing behavior of these protocols can be very complex. And while nothing is impossible to simulate, it's just so much easier to work with the real thing.
 
-### 2. All protocols on the same network
+### 2. Everything on the same network
 
 Testnets like Ropsten and Rinkeby are the worst of both worlds. There are some protocols that only exist on one testnet but not on another (something might be on Ropsten, but not Rinkeby).
 
@@ -87,25 +93,21 @@ One major benefit here is that you'll be using the exact same addresses and ABIs
 
 This allows you to catch edge-cases and nuances that are often not apparent in a sandboxed cleanroom-like environment. Real world state can be dirty, and it's best that you develop with that in mind rather than be surprised when you deploy.
 
----
+# A short introduction
 
 So how do we achieve all this?
 
-Fortunately, the amazing folks over at [Truffle](https://www.trufflesuite.com/) has made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/).
-
-# Quickstart
+Fortunately, the amazing folks over at [Truffle](https://www.trufflesuite.com/) have made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/). Ganache is basically a test blockchain that you can run locally and it will insta-mine your transactions for you. Conveniently for us, it also has the ability to fork off Mainnet.
 
 To fork off Mainnet, simply invoke the `-f` flag on `ganache-cli`.
 
 ```bash
-npx ganache-cli -f https://mainnet.infura.io/v3/7d0d81d0919f4f05b9ab6634be01ee73 -i 5777 -d
+npx ganache-cli -f https://mainnet.infura.io/v3/7d0d81d0919f4f05b9ab6634be01ee73
 ```
 
 _This Infura API key is obtained publicly from [Ethers.js](https://github.com/ethers-io/ethers.js/blob/master/src.ts/providers/infura-provider.ts#L14)._
 
-This will spawn a Ganache instance, which is a test blockchain with Mainnet state on `http://localhost:8545`.
-
-You can then try and interact with some Mainnet contracts, for example here's the full code to interact with `WETH` or [Wrapped Ether](https://weth.io/):
+This will spawn a Ganache instance at `http://localhost:8545`. You can then try and interact with some Mainnet contracts, for example here's the full code to interact with `WETH` or [Wrapped Ether](https://weth.io/) which also uses our [Money-Legos](../npm-install-money-legos) library:
 
 ```javascript
 const { legos } = require("@studydefi/money-legos")
@@ -138,14 +140,18 @@ const main = async () => {
 main()
 ```
 
-<br />
+### "Gotchas" to be aware of
 
-Note that the above code sample uses our `money-legos` library, which we dive into in this blog [post](../npm-install-money-legos).
-
-# "Gotchas" to be aware of
-
-Unfortunately the Infura key from Ethers.js does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you'll be greeted with the following message from Infura:
+Unfortunately the Infura key from Ethers.js does not point to an archival node. That means you will have to to restart `ganache-cli` every 128 blocks (~30 minutes), otherwise you may be greeted with the following message from Infura:
 
 > Returned error: project ID does not have access to archive state
 
-Stay tuned for the next blogpost on how to avoid this issue (without paying \$250/month for an archival node)!
+We'll be doing a deep dive of this issue in the future (and how to get around it without paying $250 for an archival node). So make sure you subscribe!
+
+# That's it?
+
+Of course there's a lot more to developing on Mainnet than just running a Ganache instance.
+
+We have created a testing harness that can give you a "fresh" Mainnet state for each of your test files thanks to Jest's ability to run its test suites in parallel.
+
+Make sure you subscribe below so you can catch this next blog post when it comes out! And don't forget to follow our Twitter [@studydefi](https://twitter.com/studydefi).
