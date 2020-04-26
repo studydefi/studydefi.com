@@ -5,7 +5,7 @@ description: "All major DeFi protocol ABIs and addresses at your finger tips! Wi
 thumbnail: './money-legos-header.png'
 ---
 
-![header image](./header-img.png)
+![header image](./money-legos-header.png)
 
 - Github: https://github.com/studydefi/money-legos
 - Documentation: https://money-legos.studydefi.com/
