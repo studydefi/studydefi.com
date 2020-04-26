@@ -2,7 +2,7 @@
 title: "npm install money-legos"
 date: "2020-04-23"
 description: "All major DeFi protocol ABIs and addresses at your finger tips! With Typescript autocomplete!"
-thumbnail: './header-img.png'
+thumbnail: './money-legos-header.png'
 ---
 
 ![header image](./header-img.png)
