@@ -1,34 +1,97 @@
 ---
-title: "Forking off Mainnet: Integrating Existing DeFi Protocols"
+title: "Forking off Mainnet — Developing in the Real World"
 date: "2020-04-24"
 description: "A guide on building and testing with existing Mainnet protocols"
-thumbnail: './building-blocks.jpg'
+thumbnail: "./building-blocks.jpg"
 ---
 
 ![building blocks](./building-blocks.jpg)
 
-While building [Dedge](https://dedge.exchange), one of the first problems we encountered was:
+## The problem
 
-> How do we interact with existing Mainnet dapps?
+> That's four complex protocols! Where do I even start?
 
-Well after some thinking, we figured...
+While building [Dedge](https://dedge.exchange), we realized we had to interface with at least three major protocols in order to swap debt on Compound. In this one "simple" transaction, we interact with:
+
+- [AAVE](https://aave.com) — for a [flash loan](https://aave.com/flash-loans)
+- [Uniswap](https://uniswap.exchange) — for getting the tokens we want
+- [Compound](https://compound.finance/) — to repay and borrow debt
+
+You can start to see why this might be just a little bit intimidating, and this is _before_ implementing our additional feature of importing [Maker](https://makerdao.com/) Vault positions. That's four complex protocols! Where do I even start?
+
+## Common approaches
+
+Developing with multiple protocols is a crucial part of DeFi development, and currently none of the approaches are quite satisfactory. So we decided to talk to a bunch of DeFi startups, and find out what they were doing.
+
+It turns out there are **two common approaches**: (1) writing mock contracts, and (2) deploying the protocol locally. Let's take a quick look at these two approaches.
+
+### Mock contracts
+
+Writing your own mock contracts and deploying them locally seem to be the most common strategy today. In essence, this is writing your own "dummy" smart contracts with the same interface as the real protocol that you want to interact with.
+
+![dummy hand](./dummy-hand.jpg)
+
+Of course, this means you have to return "realistic" dummy values that your dapp will react to. And determining what kind of values to return, how realistic these values are, and how it might affect your system is a very complex problem.
+
+> You might start to feel like you're building the protocol from scratch!
+
+Beyond that, your mock contracts can grow in complexity over time as you deal with more nuanced and complex behavior. At the end of the day, you might start to feel like you're building the protocol from scratch!
+
+### Deploying the protocol locally
+
+Another approach very rarily used is deploying the actual protocol itself locally. This means grabbing the actual Solidity source files for the protocol you are interested in, and then compiling and deploying locally.
+
+Don't forget you still need to seed the contracts with a "realistic" state. There may be no easy way to do this, and you'll have to end up simulating multiple users (i.e. building your own Ethereum bots) just to get to that point.
+
+Needless to say, it's very clear why most startups choose not to follow this strategy.
+
+# The better way
+
+The strategies above already sound pretty horrendous in and of themselves. Multiply that by the number of protocols you want to interact with and you start to see the problem.
+
+Following the strategies above will put a huge burden on your development velocity. So after some thinking about this, we figured maybe we should just...
 
 ![do it live](./do-it-live.gif)
 
-Basically, we would ideally want to fork off the current Mainnet state into a sandboxed environment, and develop/test our smart contracts from there.
+<br />
 
-# Advantages
+Basically, we want to just **work on Mainnet itself**. And the way to do that is to fork off Mainnet with a local test chain so we have access to the state and protocols that reside on Mainnet, while being able to develop locally.
 
-This provides a few essential benefits:
+## Advantages
 
-1. **Real and full liquidity** on all existing DeFi protocols and exchanges (e.g. Aave, Compound, Uniswap, etc.).
-2. You have guaranteed access to **every major protocol** deployed on Mainnet.
-   - If you were using official testnets (like Rinkeby or Ropsten) the protocol you want might not be deployed there
-3. You get **[dev/prod parity](https://12factor.net/dev-prod-parity)**, which means you get to use the same contract addresses and ABIs everywhere.
+Forking off Mainnet provides a few essential benefits.
 
-And how can we achieve this?
+### 1. Real and full liquidty
 
-Fortunately, the amazing folks over at [truffle](https://www.trufflesuite.com/) has made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/).
+If you need to work with a bunch of ERC20 tokens, you're going to need to source them from somewhere. Rather than simulating any of this, why not just "buy" the tokens from the real Uniswap itself?
+
+Don't forget that each ERC20 token in the wild can have its own nuances (like different decimals and additional functionality) so it may not be trivial to just replace the actual thing with your own dummy ERC20 tokens.
+
+This also applies to lending protocols like AAVE and Compound. Lending and borrowing behavior of these protocols can be very complex. And while nothing is impossible to simulate, it's just so much easier to work with the real thing.
+
+### 2. All protocols on the same network
+
+Testnets like Ropsten and Rinkeby are the worst of both worlds. There are some protocols that only exist on one testnet but not on another (something might be on Ropsten, but not Rinkeby).
+
+When you need to interact with more than one protocol, testnets are just not very helpful. You need to get test Ether from somewhere, and if you need access to certain ERC20 tokens you might very well be out of luck.
+
+And finally, you still need to wait for each transaction to be mined. So testnets are only really good for testing very specific use-cases where you don't interact with many existing protocols.
+
+### 3. Development and production parity
+
+> Real world state can be dirty
+
+Out of the box, you get **[dev/prod parity](https://12factor.net/dev-prod-parity)**, which is a very important concept in traditional app development. You want to be building in an environment that is as similar to the real thing as possible.
+
+One major benefit here is that you'll be using the exact same addresses and ABIs in development _and_ production. That's one less source of uncertainty you'll have to worry about.
+
+This allows you to catch edge-cases and nuances that are often not apparent in a sandboxed cleanroom-like environment. Real world state can be dirty, and it's best that you develop with that in mind rather than be surprised when you deploy.
+
+---
+
+So how do we achieve all this?
+
+Fortunately, the amazing folks over at [Truffle](https://www.trufflesuite.com/) has made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/).
 
 # Quickstart
 
@@ -74,6 +137,7 @@ const main = async () => {
 
 main()
 ```
+
 <br />
 
 Note that the above code sample uses our `money-legos` library, which we dive into in this blog [post](../npm-install-money-legos).
