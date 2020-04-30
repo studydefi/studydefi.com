@@ -8,7 +8,7 @@ pre[class*="language-"] {
 	color: #c3cee3;
 	background: #263238;
 	font-family: Roboto Mono, monospace;
-	font-size: 1em;
+	font-size: 0.9em;
 	line-height: 1.5em;
 
 	-moz-tab-size: 4;
@@ -44,7 +44,7 @@ pre[class*="language-"] ::selection {
 pre[class*="language-"] {
 	overflow: auto;
 	position: relative;
-	margin: 0.5em 0;
+	margin: 0.5em 0 2.5em;
 	padding: 1.25em 1em;
 }
 
