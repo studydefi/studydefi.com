@@ -23,7 +23,7 @@ By the end of this tutorial, your test suite will be swapping coins on [Uniswap]
 
 > Wow! A tutorial on interacting with Mainnet protocols
 
-You can to skip straight to this [repository]() with the complete code for this tutorial. Or you can look through our testing setup in the [money-legos](https://github.com/studydefi/money-legos) package.
+You can to skip straight to this [repository](https://github.com/studydefi/minimal-testing-tutorial) with the complete code for this tutorial. Or you can look through our testing setup in the [money-legos](https://github.com/studydefi/money-legos) package.
 
 If you find this page too long, don't worry. The tutorial (and code) is actually very short, but this page is long because we have explanations for every step of the way.
 
