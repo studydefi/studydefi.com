@@ -276,10 +276,10 @@ They pass, yay!
 
 # That's it?
 
-Of course, this is just a small example. In fact, it's all in one file. But I'm sure you have further questions too.
-
-How do we run multiple tests in parallel? What about the smart contracts that I'm writing myself?
+Of course, this is just a small example. In fact, it's all in one file. But I'm sure you have further questions too. How do we run multiple tests in parallel? What about the smart contracts that I'm writing myself?
 
 All this and more in future blog articles!
 
 Make sure you subscribe below so you can catch the next blog post when it comes out! And don't forget to follow our Twitter [@studydefi](https://twitter.com/studydefi) and come say hi on our [Discord](https://t.co/G6TNIZHR2Z).
+
+And make sure to try out our [Money-Legos](./npm-install-money-legos) package and our project [Dedge](./dedge-101) (swap collateral and debt on Compound).
