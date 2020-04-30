@@ -7,17 +7,25 @@ thumbnail: "./testing-header.png"
 
 ![header image](./testing-header.png)
 
-> How do I get started?
+<br />
 
-In our previous post, maybe we were able to convince you that [forking off Mainnet](<(../forking-off-mainnet)>) is a great way to develop on existing DeFi protocols.
+> I want to dev on Mainnet, but how do I get started?
 
-But now what? How do I get started?
+In our previous post, maybe we convinced you to [fork off Mainnet](<(../forking-off-mainnet)>). This article picks up where the last one left off and provides practical steps in creating your own setup.
 
-In this article, we will walk you through creating your own test harness with [Jest](https://jestjs.io/) and [Ganache](https://github.com/trufflesuite/ganache-core).
+In this article, we will walk through creating your own test harness with [Jest](https://jestjs.io/) and [Ganache](https://github.com/trufflesuite/ganache-core). And not only that, we will demonstrate **actual interaction with on-chain protocols** within your tests.
+
+By the end of this tutorial, your test suite will be swapping coins on [Uniswap](https://uniswap.exchange/).
+
+![buying tokens](./buying-tokens.jpg)
 
 ## Tutorial
 
-A great place to start is our testing setup in the [money-legos](https://github.com/studydefi/money-legos) package. You can inspect [`tests/test-environment.js`](https://github.com/studydefi/money-legos/blob/master/tests/test-environment.js) to see how it's done but I will walk you through the basics here.
+> Wow! A tutorial on interacting with Mainnet protocols
+
+You can to skip straight to this [repository]() with the complete code for this tutorial. Or you can look through our testing setup in the [money-legos](https://github.com/studydefi/money-legos) package.
+
+If you find this page too long, don't worry. The tutorial (and code) is actually very short, but this page is long because we have explanations for every step of the way.
 
 Now let's get started.
 
@@ -190,9 +198,31 @@ test("buy DAI from Uniswap", async () => {
 })
 ```
 
-There are 3 major parts to this: (1) Setting up all the contracts, (2) Making the actual swap, and (3) checking to make sure that we actually bought some DAI.
+There are 3 major parts to this: (1) Setting up all the contracts, (2) Making the actual swap, and (3) checking to make sure that we actually bought some DAI. So let's break it down.
 
 ### Setting up the contracts
+
+```js
+// 1. instantiate contracts
+const daiContract = new ethers.Contract(
+  erc20.dai.address,
+  erc20.dai.abi,
+  wallet
+)
+const uniswapFactoryContract = new ethers.Contract(
+  uniswap.factory.address,
+  uniswap.factory.abi,
+  wallet
+)
+const daiExchangeAddress = await uniswapFactoryContract.getExchange(
+  erc20.dai.address
+)
+const daiExchangeContract = new ethers.Contract(
+  daiExchangeAddress,
+  uniswap.exchange.abi,
+  wallet
+)
+```
 
 Since we want to buy DAI, we need to setup the DAI contract instance again. Of course, if you know you'll be interacting with the same contract across multiple tests, you would probably want to instantiate this in the `beforeAll` hook instead.
 
