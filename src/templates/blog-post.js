@@ -48,7 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
         <footer>
           {/* <Bio /> */}
-          <MailingList />
+          <MailingList currentPath={location.pathname} />
         </footer>
       </article>
 

@@ -4,10 +4,14 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 
 import { rhythm } from "../utils/typography"
 
-const MailingList = () => {
+const MailingList = ({ currentPath }) => {
   const [email, setEmail] = useState("")
   const [response, setResponse] = useState(null)
   const handleSubmit = async () => {
+    window.analytics.track("email_subscribe_clicked", {
+      email,
+      currentPath,
+    })
     const res = await addToMailchimp(email)
     setResponse(res)
   }
