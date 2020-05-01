@@ -94,7 +94,7 @@ Let's first confirm our initial conditions by checking that we have 0 DAI and 10
 In the same file, put the following under the `startChain` function:
 
 ```js
-const erc20 = require("@studydefi/money-legos/erc20").default
+const erc20 = require("@studydefi/money-legos/erc20")
 
 describe("do some tests", () => {
   let wallet
@@ -148,7 +148,7 @@ First we need to add the following two lines before our tests (top of the file o
 
 ```js
 jest.setTimeout(100000)
-const uniswap = require("@studydefi/money-legos/uniswap").default
+const uniswap = require("@studydefi/money-legos/uniswap")
 ```
 
 Since this operation is a bit more complex, we'll set Jest's default timeout to 100 seconds (rather than the default 5 seconds). We'll be working with Uniswap, so we will also need the ABIs and addresses for the Uniswap protocol from the `money-legos` package.
