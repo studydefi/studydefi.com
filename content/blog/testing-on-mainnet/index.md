@@ -11,7 +11,7 @@ thumbnail: "./testing-header.png"
 
 > I want to dev on Mainnet, but how do I get started?
 
-In our previous post, maybe we convinced you to [fork off Mainnet](<(./forking-off-mainnet)>). This article picks up where the last one left off and provides practical steps in creating your own setup.
+In our previous post, maybe we convinced you to [fork off Mainnet](./forking-off-mainnet). This article picks up where the last one left off and provides practical steps in creating your own setup.
 
 In this article, we will walk through creating your own test harness with [Jest](https://jestjs.io/) and [Ganache](https://github.com/trufflesuite/ganache-core). And not only that, we will demonstrate **actual interaction with on-chain protocols** within your tests.
 
