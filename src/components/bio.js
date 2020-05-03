@@ -34,17 +34,18 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-      <a
-        style={{ marginRight: "12px" }}
-        href="https://twitter.com/studydefi"
-        target="_blank"
-        rel=""
-      >
-        Twitter
-      </a>
-      <a href="https://discord.gg/rBr3U32" target="_blank" rel="">
-        Discord
-      </a>
+      <p>
+        <i>
+          Have questions? Find us on{" "}
+          <a href="https://twitter.com/studydefi" target="_blank" rel="">
+            Twitter
+          </a>{" "}
+          and{" "}
+          <a href="https://discord.gg/rBr3U32" target="_blank" rel="">
+            Discord
+          </a>
+        </i>
+      </p>
     </div>
   )
 }
