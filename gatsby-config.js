@@ -61,13 +61,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `StudyDeFi Blog`,
+        short_name: `StudyDeFi`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#1c232a`,
+        theme_color: `#fe921f`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/android-chrome-192x192.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
