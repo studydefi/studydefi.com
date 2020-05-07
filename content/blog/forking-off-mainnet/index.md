@@ -154,4 +154,4 @@ Of course there's a lot more to developing on Mainnet than just running a Ganach
 
 We have created a testing harness that can give you a "fresh" Mainnet state for each of your test files thanks to Jest's ability to run its test suites in parallel.
 
-Make sure you subscribe below so you can catch this next blog post when it comes out! And don't forget to follow our Twitter [@studydefi](https://twitter.com/studydefi).
+Make sure you subscribe below so you can catch the next blog post when it comes out! And don't forget to follow us on Twitter [@studydefi](https://twitter.com/studydefi) and come say hi on [Discord](https://discord.gg/rBr3U32).
