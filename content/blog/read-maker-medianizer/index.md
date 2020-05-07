@@ -5,7 +5,7 @@ description: "This tutorial covers how to get ETH price from Maker's on-chain Me
 thumbnail: "./header.png"
 ---
 
-![header image](./header.jpg)
+![header image](./header.png)
 
 > A reliable on-chain ETH/USD price-feed, for free?
 
