@@ -1,6 +1,6 @@
 ---
 title: "Reading ETH price from Maker's Medianizer"
-date: "2020-05-01"
+date: "2020-05-07"
 description: "This tutorial covers how to get ETH price from Maker's on-chain Medianizer in both Solidity and Javasript."
 thumbnail: "./header.png"
 ---
