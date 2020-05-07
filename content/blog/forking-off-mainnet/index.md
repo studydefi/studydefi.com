@@ -99,10 +99,10 @@ So how do we achieve all this?
 
 Fortunately, the amazing folks over at [Truffle](https://www.trufflesuite.com/) have made a lovely tool called [Ganache](https://github.com/trufflesuite/ganache-cli/). Ganache is basically a test blockchain that you can run locally and it will insta-mine your transactions for you. Conveniently for us, it also has the ability to fork off Mainnet.
 
-To fork off Mainnet, simply invoke the `-f` flag on `ganache-cli`.
+To fork off Mainnet, simply invoke the `-f` flag on `ganache-cli`. The `-i` flag indicates a network ID of 1.
 
 ```bash
-npx ganache-cli -f https://mainnet.infura.io/v3/7d0d81d0919f4f05b9ab6634be01ee73
+npx ganache-cli -f https://mainnet.infura.io/v3/7d0d81d0919f4f05b9ab6634be01ee73 -i 1
 ```
 
 _This Infura API key is obtained publicly from [Ethers.js](https://github.com/ethers-io/ethers.js/blob/master/src.ts/providers/infura-provider.ts#L14)._
