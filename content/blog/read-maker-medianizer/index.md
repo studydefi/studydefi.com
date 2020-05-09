@@ -1,5 +1,5 @@
 ---
-title: "Reading ETH price from Maker's Medianizer"
+title: "Reading ETH price from Maker's Medianizer (v1)"
 date: "2020-05-07"
 description: "This tutorial covers how to get ETH price from Maker's on-chain Medianizer in both Solidity and Javasript."
 thumbnail: "./header.png"
@@ -12,6 +12,10 @@ thumbnail: "./header.png"
 Yup, you heard me right - A **free** on-chain price feed for ETH/USD (courtesy of [Maker](https://makerdao.com/)). In this article, we'll show you how to do it in both Solidity and JavaScript!
 
 But first, let's learn a little bit about the Medianizer.
+
+#### Update 2020/05/09
+
+It has came to our attention that the Maker v2 oracle system has a whitelist system, thanks to [@androolloyd](https://twitter.com/androolloyd/status/1258341727473147904?ref_src=twsrc%5Etfw). Stay tune for a future blogpost on how to read price values from Compound/Chainlink oracles!
 
 ## What is the Medianizer?
 
