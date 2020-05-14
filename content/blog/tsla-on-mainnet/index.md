@@ -7,19 +7,21 @@ thumbnail: "./testing-header.png"
 
 > A token that can be traded anywhere and anytime.
 
-Have you ever wanted to buy a share of Apple or Tesla? For most people, that's often easier said than done. These stocks live on the Nasdaq stock exchange and it's not quite as easy as buying a Big Mac from McDonald's.
+Have you ever wanted to buy a share of Apple or Tesla?
 
-Depending on where you live, you might not even be able to purchase these assets. And even if you live in the US, you still have to wait for the exchange to be open before placing an order.
+Your local time, location of residence, and whether or not you have an account with a brokerage are all factors that determine whether or not you can buy a share of your favorite stock.
 
-What if I told you that you can create your own ERC20 token that tracks the price of TSLA and launch it onto the Ethereum Mainnet today? A token that can be traded anywhere and anytime.
+But what if I told you that, no matter where you are, you can create your own ERC20 token that tracks the price of TSLA and launch it onto the Ethereum Mainnet, and trade it with other people _today_? A token that can be traded anywhere and anytime.
 
 # How is this possible?
 
 While we don't have access to real TSLA stocks themselves, the UMA protocol gives us the ability to basically mint any token as long as it's backed by a sufficient amount of collateral (which can be different from the underlying asset).
 
-Sounds magical, right? But that's how MakerDAO has been printing DAI (a coin that tracks the USD) all this time. People staked their ETH as collateral, and they were able to mint DAI as a result. Conceptually, it's really not all that different.
+Sounds magical, right?
 
-These are called synthetic tokens because they can trade with a value that tracks the underlying asset, without requiring the system to touch the real thing at all (as long as there's a reliable mechanism for ascertaining the price).
+But this concept is how DAI (a stablecoin that tracks the USD) has been minted from vaults of collateralized ETH since 2018. Conceptually, staking ETH and minting DAI is not all that different from staking something else and minting a TSLA token.
+
+These are called **synthetic tokens** because you can trade them as if they were the "real thing" without requiring anyone in the system to actually buy or sell the underlying asset (as long as there's a reliable mechanism for ascertaining price and ensuring collateralization).
 
 # Two requirements
 
@@ -28,7 +30,7 @@ In order to create a synthetic token with the UMA protocol, there are two things
 1. The collateral currency, and;
 2. A price identifier (for the synthetic token).
 
-The collateral currency is what the collateral backing the synthetic tokens will be denominated by (usually an ERC20 token). The `collateralTokenWhitelist` of the `ExpiringMultiPartyCreator` tracks which tokens have been approved as collateral.
+The collateral currency is what the collateral backing the synthetic tokens will be denominated by (usually an ERC20 token). The `collateralTokenWhitelist` of the `ExpiringMultiPartyCreator` smart contract tracks which tokens have been approved as collateral.
 
 The price identifier is an ID that refers to the source of the underlying asset's price. In our example, this will be in reference to a price feed that tells us how much one share of TSLA is worth. This is stored inside the `IdentifierWhitelist` smart contract.
 
@@ -67,7 +69,7 @@ It's very likely your token already exists, but if not here's how you can launch
 
 1. Use the `ExpiringMultiPartyCreator`
 2. Define `constructorParams`
-3. 
+3.
 
 If the already token facility already exists:
 
