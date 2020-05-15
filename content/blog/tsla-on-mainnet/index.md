@@ -11,7 +11,7 @@ Have you ever wanted to buy a share of Apple or Tesla?
 
 Your local time, location of residence, and whether or not you have an account with a brokerage are all factors that determine whether or not you can buy a share of your favorite stock.
 
-But what if I told you that, no matter where you are, you can create your own ERC20 token that tracks the price of TSLA and launch it onto the Ethereum Mainnet, and trade it with other people _today_? A token that can be traded anywhere and anytime.
+But what if I told you that, no matter where you are or what time it is, you can create your own ERC20 token that tracks the price of TSLA and launch it onto the Ethereum Mainnet, and trade it with other people _today_? A token that can be traded anywhere and anytime.
 
 # How is this possible?
 
@@ -38,7 +38,7 @@ If these two components are already approved, then you're in luck! If not, then 
 
 # The UMIP process
 
-UMIP stands for the UMA Improvement Proposal, and it is the method in which new collateral types and price identifiers can be proposed amongst other governance decisions.
+UMIP stands for the UMA Improvement Proposal, and it is the method in which new collateral types and price identifiers can be proposed amongst other governance decisions. This process helps ensure that there will be demonstrated community support before a change is approved.
 
 ## Proposing a new collateral currency
 
@@ -46,36 +46,29 @@ If the desired collateral currency has not been approved yet, you can propose an
 
 Note that each contract factory template is tied to a specific collateral currency, so by proposing a new contract factory template, we are essentially requesting the approval of a new collateral currency.
 
-Considerations...
-
-- consider security implications
-- new collateral contributes to system PfC (profit from corruption)
-- Prior to approval, there should be demonstrated community support for the change.
+When proposing a new collateral currency, you need to consider potential security implications. Since this collateral will be locked into the system for the minting of tokens, this can be a new source of profit for potential hackers. Of course, one must also consider whether or not the collateral currency is stable enough to warrant being approved.
 
 ## Proposing a new price identifier
 
 If your desired price identifier has not been approved yet, you can also propose a UMIP to have that included. Here is an example [proposal](https://github.com/UMAprotocol/UMIPs/blob/master/UMIPs/umip-2.md) that demonstrates adding ETHBTC as a price identifier.
 
-Considerations...
-
-- should be specific enough that \$UMA holders know how they should resolve it under most cases
-- Prior to approval, there should be demonstrated community support for the change.
-
-...segway to DVM
+The proposal for a new price identifier must be specific enough that, when under dispute, it should be easy for UMA token holders to agree on its "true" price. A lot of this is driven by the Data Verification Mechanism (DVM) which is used to resolve disputes in "priceless" contracts. A detailed explanation of the DVM is outside of the scope of this article.
 
 # Launching your token
 
-It's very likely your token already exists, but if not here's how you can launch your own token factory.
+If your desired collateral currency and price feed identifier already exists, then it's likely that a token factory template for your collateral and synthetic token already exists. If you are happy with its parameters, you can simply create a position with that token factory (also known as the `ExpiringMultiParty` contract).
 
-1. Use the `ExpiringMultiPartyCreator`
-2. Define `constructorParams`
-3.
+All you need to do is to call the `create` method of the token factory contract with the amount of collateral to be staked and the desired number of tokens to mint.
 
-If the already token facility already exists:
-
-1. Create a position w/ the EMP contract
+If, however, you are not happy with its parameters or if the desired token factory does not exist yet, then you can launch your own by using the `ExpiringMultiPartyCreator`.
 
 # What happens now?
+
+The minted synthetic tokens are ERC20 tokens that can be traded on any exchange that supports the ERC20 standard! That means you can potentially create a market for this on Uniswap and have it 
+
+## Expiry date
+
+These tokens have an expiry date
 
 - as a token holder: buy the tokens on any DEX where it’s trading
 - as a token sponsor: use the sponsor CLI tool on our docs site
