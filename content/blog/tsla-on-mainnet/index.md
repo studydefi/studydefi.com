@@ -41,9 +41,9 @@ In order to create a synthetic token on UMA, two components need to be approved 
 1. The collateral currency, and;
 2. A price identifier.
 
-The collateral currency is the denomination of the backing collateral, which in our case is DAI. Approved collateral tokens are tracked by the `collateralTokenWhitelist` of the `ExpiringMultiPartyCreator` smart contract.
+The collateral currency is the denomination of the backing collateral, which in our case is DAI. Approved collateral tokens are tracked by the [`collateralTokenWhitelist`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol#L45) of the `ExpiringMultiPartyCreator` smart contract.
 
-The price identifier is an ID that refers to the source of the underlying asset's price. In our case, this is the string `TSLA`, in reference to the dollar value of one share of TSLA. The `IdentifierWhitelist` smart contract keeps track of approved identifiers.
+The price identifier is an ID that refers to the source of the underlying asset's price. In our case, this is the string `TSLA`, in reference to the dollar value of one share of TSLA. The [`IdentifierWhitelist`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/oracle/implementation/IdentifierWhitelist.sol) smart contract keeps track of approved identifiers.
 
 Thankfully, in our case, both of these have already been approved. However, if you need to seek approval for either of these, then you will need to learn about the UMIP process.
 
@@ -62,7 +62,7 @@ graph TD
   D --> E(Gain approval from community)
 ```
 
-If the desired collateral currency has not been approved, you can propose an UMIP for a new contract factory template. Here is an example [proposal](https://github.com/UMAprotocol/UMIPs/blob/master/UMIPs/umip-newcontract.md).
+If the desired collateral currency has not been approved, you can propose an UMIP for a new contract factory template. Here is an example [proposal](https://github.com/UMAprotocol/UMIPs/blob/master/UMIPs/umip-4.md).
 
 Each contract factory template is tied to a specific collateral currency, so by proposing a new contract factory template, we are essentially requesting the approval of a new collateral currency.
 
@@ -86,7 +86,7 @@ The proposal for a price identifier must be specific enough that, when under dis
 
 To mint a TSLA token, you'll need a token factory contract. This contract is also known as the `ExpiringMultiParty` contract. So named because the token will actually expire, more on this later.
 
-If your desired collateral currency and price feed identifier already exists, then it's possible that a token factory with your desired parameters already exist.
+If your desired collateral currency and price feed identifier already exists, then it's possible that a token factory with your desired parameters already exists.
 
 If so, all you need to do is call the `create` method of the token factory with the amount of collateral to be staked and the number of tokens to mint:
 
