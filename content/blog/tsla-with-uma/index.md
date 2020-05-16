@@ -2,7 +2,10 @@
 title: "How UMA allows you to mint your own TSLA token"
 date: "2020-05-18"
 description: "A guide on deploying your own synthetic token to Mainnet with the UMA protocol."
+thumbnail: "./header.png"
 ---
+
+![header](./header.png)
 
 > A token that can be traded anywhere and anytime.
 
