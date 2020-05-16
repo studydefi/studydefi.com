@@ -115,8 +115,8 @@ Note that this article is not meant to be a tutorial, the code above is for illu
 graph TD
   A[Does token exist?]
   A --> |Yes| B(Trade on DEX<br />Use Sponsor CLI<br />Run liquidation bots<br />Run dispute bots)
-  A --> |Yes, but params not ideal| C(Do the parameters satisfy you?)
-  A --> |No| C(Deploy your own token factory)
+  A --> |Yes, but params not ideal| C(Deploy your own token factory)
+  A --> |No| D(Ensure collateral and price ID is approved,<br />see flow charts under UMIP section above) --> C
   C --> B
 ```
 
