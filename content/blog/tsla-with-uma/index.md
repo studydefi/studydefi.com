@@ -1,7 +1,7 @@
 ---
-title: "How UMA allows you to mint your own TSLA token"
+title: "Mint your own TSLA token with UMA"
 date: "2020-05-18"
-description: "A guide on deploying your own synthetic token to Mainnet with the UMA protocol."
+description: "An introduction to deploying your own synthetic token with the UMA protocol."
 thumbnail: "./header.png"
 ---
 
