@@ -2,7 +2,6 @@
 title: "How UMA allows you to mint your own TSLA token"
 date: "2020-05-18"
 description: "A guide on deploying your own synthetic token to Mainnet with the UMA protocol."
-thumbnail: "./testing-header.png"
 ---
 
 > A token that can be traded anywhere and anytime.
@@ -22,6 +21,16 @@ While we don't have access to real TSLA stocks, the UMA protocol allows us to mi
 Sounds magical, right?
 
 But this concept is how MakerDAO has been using ETH collateral to mint DAI (a stablecoin pegged to the USD) since 2018. Conceptually, staking ETH and minting DAI is not all that different from staking something else and minting a TSLA token.
+
+```mermaid
+graph LR
+  A(ETH) --> |stake| B[(MakerDAO Vault)] --> |mint| C(DAI stablecoin)
+```
+
+```mermaid
+graph LR
+  A(DAI) --> |stake| B[(UMA Token Factory)] --> |mint| C(synthetic TSLA)
+```
 
 These **synthetic tokens** can be traded as if they were worth the "real thing" without anyone in the system needing to buy or sell a share of TSLA on Nasdaq. This works as long as the system can ensure collateralization, ascertain the price of the underlying asset, and resolve disputes.
 
@@ -44,6 +53,15 @@ UMIP stands for UMA Improvement Proposal, and is the method in which new collate
 
 ## Proposing a new collateral currency
 
+```mermaid
+graph TD
+  A[Is collateral currency already approved?]
+  A --> |Yes| B(Proceed to next step)
+  A --> |No| C(Submit UMIP for new contract factory)
+  C --> D(Consider PfC security concerns)
+  D --> E(Gain approval from community)
+```
+
 If the desired collateral currency has not been approved, you can propose an UMIP for a new contract factory template. Here is an example [proposal](https://github.com/UMAprotocol/UMIPs/blob/master/UMIPs/umip-newcontract.md).
 
 Each contract factory template is tied to a specific collateral currency, so by proposing a new contract factory template, we are essentially requesting the approval of a new collateral currency.
@@ -51,6 +69,14 @@ Each contract factory template is tied to a specific collateral currency, so by 
 When proposing a new collateral currency, you need to consider potential security implications. A new type of collateral can potentially mean a new type of profit for potential hackers (this is what we like to call Profit from Corruption, or PfC).
 
 ## Proposing a new price identifier
+
+```mermaid
+graph TD
+  A[Is price identifier already approved?]
+  A --> |Yes| B(Proceed to next step)
+  A --> |No| C(Submit UMIP for new price identifier)
+  C --> D(Consider ease of resolution) --> E(Gain approval from community)
+```
 
 If your desired price identifier has not been approved, you can propose an UMIP to have it included. Here is an example [proposal](https://github.com/UMAprotocol/UMIPs/blob/master/UMIPs/umip-2.md) that demonstrates adding ETHBTC as a price identifier.
 
@@ -83,7 +109,16 @@ const expiringMultiParty = await ExpiringMultiParty.at(
 )
 ```
 
-Note that this article is not meant to be a tutorial, the code above is for illustration only. A full tutorial with a working example is in the works.
+Note that this article is not meant to be a tutorial, the code above is for illustration only. A full tutorial with a working example is in the works, but in summary:
+
+```mermaid
+graph TD
+  A[Does token exist?]
+  A --> |Yes| B(Trade on DEX<br />Use Sponsor CLI<br />Run liquidation bots<br />Run dispute bots)
+  A --> |Yes, but params not ideal| C(Do the parameters satisfy you?)
+  A --> |No| C(Deploy your own token factory)
+  C --> B
+```
 
 # What now?
 

@@ -85,3 +85,9 @@ blockquote {
   margin-left: -20px;
   padding: 20px 20px 20px 40px;
 }
+
+.mermaid {
+  margin: 0.5em 0 2.5em;
+  padding: 1.25em 1em;
+  text-align: center;
+}
