@@ -66,7 +66,7 @@ If the desired collateral currency has not been approved, you can propose an UMI
 
 Each contract factory template is tied to a specific collateral currency, so by proposing a new contract factory template, we are essentially requesting the approval of a new collateral currency.
 
-When proposing a new collateral currency, you need to consider potential security implications. A new type of collateral can potentially mean a new type of profit for potential hackers (this is what we like to call [Profit from Corruption](https://docs.umaproject.org/uma/getting_started/uma_oracle_design.html#_umas_approach_to_the_oracle_problem), or PfC).
+When proposing a new collateral currency, you need to consider potential security implications. A new type of collateral can potentially mean a new way to profit for potential hackers (this is what we like to call [Profit from Corruption](https://docs.umaproject.org/uma/getting_started/uma_oracle_design.html#_umas_approach_to_the_oracle_problem), or PfC).
 
 ## Proposing a new price identifier
 
