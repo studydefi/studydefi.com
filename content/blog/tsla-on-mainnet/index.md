@@ -41,7 +41,7 @@ In order to create a synthetic token on UMA, two components need to be approved 
 1. The collateral currency, and;
 2. A price identifier.
 
-The collateral currency is the denomination of the backing collateral, which in our case is DAI. Approved collateral tokens are tracked by the [`collateralTokenWhitelist`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol#L45) of the `ExpiringMultiPartyCreator` smart contract.
+The collateral currency is the denomination of the backing collateral, which in our case is DAI. Approved collateral tokens are tracked by the [`collateralTokenWhitelist`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol#L45) of the [`ExpiringMultiPartyCreator`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol) smart contract.
 
 The price identifier is an ID that refers to the source of the underlying asset's price. In our case, this is the string `TSLA`, in reference to the dollar value of one share of TSLA. The [`IdentifierWhitelist`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/oracle/implementation/IdentifierWhitelist.sol) smart contract keeps track of approved identifiers.
 
@@ -84,11 +84,11 @@ The proposal for a price identifier must be specific enough that, when under dis
 
 # Launching your token
 
-To mint a TSLA token, you'll need a token factory contract. This contract is also known as the `ExpiringMultiParty` contract. So named because the token will actually expire, more on this later.
+To mint a TSLA token, you'll need a token factory contract. This contract is also known as the [`ExpiringMultiParty`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiParty.sol) contract. So named because the token will actually expire, more on this later.
 
 If your desired collateral currency and price feed identifier already exists, then it's possible that a token factory with your desired parameters already exists.
 
-If so, all you need to do is call the `create` method of the token factory with the amount of collateral to be staked and the number of tokens to mint:
+If so, all you need to do is call the (inherited) [`create`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/PricelessPositionManager.sol#L403) method of the token factory with the amount of collateral to be staked and the number of tokens to mint:
 
 ```js
 await expiringMultiParty.create(

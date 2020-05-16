@@ -53,6 +53,11 @@ button {
   transition: border 200ms;
 }
 
+p > a > code {
+  color: var(--highlight);
+  text-decoration: underline;
+}
+
 input:focus,
 button:focus,
 a:focus {
