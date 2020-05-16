@@ -98,7 +98,7 @@ await expiringMultiParty.create(
 )
 ```
 
-However, if you are not happy with the parameters or if it does not exist yet, then you can launch your own by using the `ExpiringMultiPartyCreator` and passing in your desired parameters:
+However, if you are not happy with the parameters or if it does not exist yet, then you can launch your own by using the [`ExpiringMultiPartyCreator`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol) and passing in your desired parameters:
 
 ```js
 const txResult = await expiringMultiPartyCreator.createExpiringMultiParty(

@@ -54,8 +54,11 @@ button {
 }
 
 p > a > code {
-  color: var(--highlight);
   text-decoration: underline;
+}
+
+p > a > code:hover {
+  color: var(--highlight);
 }
 
 input:focus,
