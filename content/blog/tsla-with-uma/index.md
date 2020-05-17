@@ -50,7 +50,7 @@ The price identifier is an ID that refers to the source of the underlying asset'
 
 Thankfully, in our case, both of these have already been approved. However, if you need to seek approval for either of these, then you will need to learn about the UMIP process.
 
-# Getting approval via the UMIPs
+# Getting approval via UMIPs
 
 UMIP stands for UMA Improvement Proposal, and is the method in which new collateral types and price identifiers can be proposed amongst other governance decisions. This process helps ensure demonstrated community support before a change is approved.
 
@@ -89,7 +89,7 @@ The proposal for a price identifier must be specific enough that, when under dis
 
 To mint a TSLA token, you'll need a token factory contract. This contract is also known as the [`ExpiringMultiParty`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiParty.sol) contract. So named because the token will actually expire, more on this later.
 
-If your desired collateral currency and price feed identifier already exists, then it's possible that a token factory with your desired parameters already exists.
+If your desired collateral currency and price feed identifier is already approved, then it's possible that a token factory with your desired parameters already exists.
 
 If so, all you need to do is call the (inherited) [`create`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/PricelessPositionManager.sol#L403) method of the token factory with the amount of collateral to be staked and the number of tokens to mint:
 
@@ -101,7 +101,7 @@ await expiringMultiParty.create(
 )
 ```
 
-However, if you are not happy with the parameters or if it does not exist yet, then you can launch your own by using the [`ExpiringMultiPartyCreator`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol) and passing in your desired parameters:
+However, if you are not happy with the parameters or if the token factory does not exist yet, then you can launch your own by using the [`ExpiringMultiPartyCreator`](https://github.com/UMAprotocol/protocol/blob/master/core/contracts/financial-templates/expiring-multiparty/ExpiringMultiPartyCreator.sol) and passing in your desired parameters:
 
 ```js
 const txResult = await expiringMultiPartyCreator.createExpiringMultiParty(
